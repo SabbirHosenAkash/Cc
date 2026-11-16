@@ -13,8 +13,19 @@ Read the latest Master Specification, this prompt, and the complete Phase 1 sour
 ## 2. Preservation rules
 Do not remove, weaken, replace or silently redesign Phase 1 functionality. Keep the application ID, branding, navigation, database records, model compatibility and user settings. Use modular additions and safe migrations. Do not implement PRILINA integration in this phase.
 
-## 3. Voice input and output
-Implement a voice interaction layer that remains independent of the local inference engine.
+## 3. Hybrid voice architecture — mandatory project decision
+Implement a provider-independent voice layer that remains separate from the local inference engine. The required strategy is HYBRID:
+
+- Online/high-quality path: integrate a supported realtime voice service for natural, low-latency, conversational speech when the user enables it and network access is available.
+- Offline/fallback path: retain or add supported on-device speech recognition and TTS so basic voice interaction can continue without the cloud, subject to actual device/model capability.
+- Keep provider adapters replaceable; do not couple chat UI or inference logic to one vendor SDK.
+- Inspect the existing app and available provider SDK/API options before choosing the implementation. Compare Android compatibility, Bengali/English support, latency, cost/usage limits, regional availability, privacy/data flow and required backend/API credentials. State the selected provider and reasons before implementation.
+- Never put secret API keys in the APK or public source. Use a secure backend/proxy when a provider requires a secret. If no credential/backend is supplied, implement the abstraction and report the integration as BLOCKED rather than fabricating a working connection.
+- Do not claim ChatGPT's proprietary Live voice can be embedded or cloned exactly. Use a legitimately available natural female voice with a similar conversational quality target, not an unauthorized voice copy.
+- The user must be able to choose online hybrid voice, local fallback, or text-only mode. Cloud voice failure must not break text chat or local GGUF inference.
+
+## 4. Voice input and output
+Implement speech input and output using the selected hybrid provider adapter.
 
 Speech input:
 - Request microphone permission only when the user invokes voice input.
