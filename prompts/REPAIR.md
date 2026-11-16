@@ -38,3 +38,6 @@ Verify every file exists, is non-empty and contains what its name claims. Provid
 
 ## 5. Final response
 State what failed, evidence-based cause, exact repair, regression tests, build status, unresolved issues and verified artifacts. Do not move to the next phase until the user approves.
+
+## Mandatory File Explorer handover after every repair
+Keep the complete repaired project in the active Google AI Studio workspace/File Explorer so it can be used in the next session/phase. Build the APK from this exact repaired project. If the environment supports writing build outputs into File Explorer, place the genuine verified APK there under one stable current filename (for example, `PRILINA-latest.apk`). Replace/remove the old APK only after the new APK has built successfully and passed file verification; never delete the previous known-good APK before that point. Keep a complete repaired source ZIP separately when supported. Report exact workspace paths, filenames, file sizes, build variant, tests, and whether File Explorer replacement actually succeeded. If the environment cannot place files there or cannot build, state the precise blocker and do not claim completion or fabricate artifacts. Source repair, successful build, APK placement/replacement, and physical-device testing must be reported as separate statuses.
