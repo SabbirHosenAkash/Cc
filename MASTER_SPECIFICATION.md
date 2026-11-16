@@ -2,7 +2,7 @@ PERSONAL AI ENGINE
 
 MASTER PROJECT SPECIFICATION
 
-Version: 1.2
+Version: 1.3
 Project Type: Android Personal AI Assistant
 Development Strategy: Local-first, modular, future server-ready
 Primary Integration Target: PRILINA Autonomous AI Agent
@@ -40,9 +40,9 @@ Do not merge the two applications prematurely.
 
 Initial target environment:
 
-- Android smartphone.
-- Approximately 8 GB RAM.
-- Approximately 256 GB storage.
+- Android smartphone; verify the actual device model, Android version, ABI, available RAM and free storage from supplied project/device evidence.
+- Design initially for a phone with approximately 8 GB physical RAM, but do not assume all RAM is available to the app.
+- Do not assume 256 GB storage; treat storage capacity as unknown until verified.
 - Local GGUF model support.
 - Offline operation for supported features.
 
@@ -177,15 +177,15 @@ Requirements:
 - Ability to interrupt speech.
 - Proper handling of microphone and audio permissions.
 
-8.2 Natural Female Voice
+8.2 Natural Female Voice and Hybrid Voice Architecture
 
-Provide a natural, pleasant female voice option.
+Provide a natural, pleasant female voice option with conversational pacing, expressive prosody and low-latency turn-taking.
 
-The voice should sound conversational rather than robotic.
+Use a hybrid architecture: a supported cloud/realtime voice service may provide the highest-quality natural conversation when the user enables internet-based voice; a local/on-device speech input and TTS fallback should remain available where technically supported. Keep the voice provider behind a replaceable interface so the app is not locked to one vendor.
 
-Use a suitable supported TTS provider or local engine.
+Before selecting a provider, inspect the current app architecture, supported SDK/API access, pricing/usage limits, regional availability, data handling, latency and Android compatibility. Present the concrete provider choice and any required API key/backend before implementation. Never hardcode secrets in the APK. If credentials or a backend are unavailable, implement only the provider-independent interface and clearly mark the provider connection as blocked; do not fake live voice.
 
-Do not promise an exact copy of another proprietary voice.
+Do not claim that ChatGPT's proprietary Live voice can be directly embedded or exactly cloned. Match the desired natural, warm female conversational quality using a legitimately available voice. Keep text chat and local AI usable when cloud voice is unavailable.
 
 8.3 Emotion-Aware Conversation
 
@@ -486,7 +486,7 @@ Do not move to the next phase while critical blockers remain unresolved.
 
 16. HOW TO USE THIS MASTER FILE
 
-This is the project's main source of truth.
+This is the project's main source of truth. The separate `prompts/MASTER_EXECUTION_PROMPT.md` explains exactly how Google AI Studio must consume this specification and execute one selected phase. It does not replace this specification.
 
 At the beginning of Phase 1, upload:
 
@@ -508,7 +508,7 @@ Do not assume Google AI Studio remembers earlier conversations or uploaded files
 
 Always use the latest versions.
 
-18. FINAL PROJECT RULE
+17. FINAL PROJECT RULE
 
 The goal is not merely to create an application that looks complete.
 
