@@ -130,3 +130,7 @@ Stop and report a blocker if:
 Do not silently bypass a blocker. Do not ask the user to repeat information already present in the supplied documents.
 
 END OF MASTER EXECUTION PROMPT
+
+
+## Mandatory File Explorer delivery and APK replacement (every phase)
+The user's required primary handover is the active Google AI Studio workspace/File Explorer. Keep the complete updated project tree there for continuation. Build the APK from that exact tree and, if the environment supports it, copy the genuine verified APK into that File Explorer. After and only after the new APK passes build and file verification, replace/remove the previous APK so one clearly named current APK remains (prefer `PRILINA-latest.apk`). Never delete the previous known-good APK before the replacement succeeds. Keep the source project intact and create a separate source ZIP when supported. Report exact workspace paths, filenames, sizes, build variant, build/test status, and whether the APK was actually placed in File Explorer. If the AI Studio environment cannot write to File Explorer or cannot build Android APKs, state the precise limitation and use only a genuinely supported export route; never pretend the requested placement/replacement occurred. Treat source update, successful build, File Explorer placement, and physical-device test as four separate statuses.
