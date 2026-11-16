@@ -2,8 +2,11 @@
 
 এই repository-তে Personal AI Engine প্রকল্পের মূল specification এবং Google AI Studio-তে ব্যবহারের জন্য আলাদা phase-wise prompt রাখা হয়েছে।
 
-## মূল নির্দেশনা
+## শুরু করার আগে
+- [Google AI Studio Master Execution Prompt](prompts/MASTER_EXECUTION_PROMPT.md)
 - [সম্পূর্ণ Master Specification](MASTER_SPECIFICATION.md)
+
+প্রতিটি Google AI Studio session-এ Master Execution Prompt, সর্বশেষ Master Specification এবং নির্দিষ্ট phase prompt আপলোড করবে। সঙ্গে সেই phase-এর জন্য প্রয়োজনীয় সর্বশেষ source ZIP ও handover report দেবে।
 
 ## Google AI Studio prompts
 - [Phase 1 — Core AI Foundation](prompts/PHASE_1.md)
