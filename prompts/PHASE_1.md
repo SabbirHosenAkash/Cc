@@ -43,7 +43,7 @@ Required behavior:
 - Avoid downloading model weights automatically or sending model files to a server.
 
 ## 5. Memory and performance
-The initial target described in the Master Specification is an Android phone with approximately 8 GB RAM and 256 GB storage; verify actual device details if available and do not assume all memory is available to the app.
+The initial target described in the Master Specification is an Android phone with approximately 8 GB physical RAM. Verify the actual device model, Android version, ABI, available RAM and free storage where possible; do not assume a 256 GB storage capacity or that all physical RAM is available to the app.
 
 Implement practical controls where technically supported:
 - Model/context/generation settings with safe defaults.
