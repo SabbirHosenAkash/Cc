@@ -517,3 +517,17 @@ The goal is to create a stable, useful, extensible Personal AI Engine that works
 Correctness, stability, privacy, performance, and verified functionality are more important than adding features quickly.
 
 END OF MASTER SPECIFICATION
+
+
+## Mandatory File Explorer APK Replacement and Project Handover
+
+The user's required delivery location is the active Google AI Studio project's own File Explorer/workspace file tree—not a download link as the primary delivery method. At the end of every completed phase, repair, or code update:
+
+1. Keep the complete, updated, buildable project in the active workspace/File Explorer, preserving the full project structure and all files needed for the next phase.
+2. Build the APK from that exact updated project. Do not use a stale APK, placeholder, renamed ZIP, or APK from an earlier build.
+3. When the environment permits writing/copying build outputs into the File Explorer, place the verified APK there beside or inside a clearly named deliverables folder. Use one stable filename for the current APK (for example, `PRILINA-latest.apk`) and make the latest verified build easy to identify.
+4. Replace the previous APK in the File Explorer with the new APK only AFTER the new APK has been built successfully and verified as a genuine, non-empty APK. Remove/overwrite the old APK so there is only one file presented as the current APK; do not leave multiple ambiguous files named latest/current. Never delete the previous known-good APK before the replacement is verified. If the new build fails, keep the previous APK but clearly mark it as OLD / NOT CURRENT and report the build failure; do not pretend it was replaced.
+5. Keep a complete source archive as a separate deliverable when archive creation is supported, but the live, complete project must remain in the workspace for the next phase. Do not replace the project tree with only an APK or ZIP.
+6. Verify and report the actual workspace/File Explorer paths and filenames, file sizes, APK package/application identity where available, build variant (debug/release), build result, and tests. Confirm that the APK shown in File Explorer is the exact output of the latest successful build.
+7. If Google AI Studio's current environment does not expose a writable File Explorer, cannot copy build outputs there, or cannot run the Android build, do not claim success or invent a file. State the precise limitation, preserve the complete source project, and provide the closest genuinely supported artifact/export route available in that environment. Ask for a user action only when the environment requires it.
+8. Do not finish the phase/update until the workspace contents and handover status have been checked. Clearly distinguish: (a) source updated, (b) build succeeded, (c) APK copied/replaced in File Explorer, and (d) physical-device installation tested. These are separate statuses.
