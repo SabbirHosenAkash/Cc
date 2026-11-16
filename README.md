@@ -22,3 +22,7 @@
 5. কোনো APK বা ZIP তৈরি হয়েছে বলে দাবি করার আগে file ও build output যাচাই করতে হবে।
 
 **Project rule:** Master Specification হলো source of truth। README শুধু navigation ও ব্যবহারবিধি।
+
+
+## File Explorer delivery rule
+After every completed phase/update/repair, Google AI Studio must keep the full updated project in its workspace File Explorer and, when supported, put the genuine APK built from that exact project there. After the new APK passes build and file verification, replace the previous APK so only one APK is identified as current (use a stable name such as `PRILINA-latest.apk`). Never delete the last known-good APK before the replacement is verified. If the environment cannot write APKs into its File Explorer, it must say so honestly and report the actual available export route; it must not claim a file was placed there. The complete source project must remain available for the next phase.
